@@ -6,8 +6,7 @@ module Geometry
     end
   
     def perimeter
-      # 2*(@length + @breadth)
-      10
-    end
+      2*(@length + @breadth)
+      end
   end
 end
