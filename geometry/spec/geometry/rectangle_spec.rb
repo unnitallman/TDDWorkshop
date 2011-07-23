@@ -46,7 +46,11 @@ module Geometry
       lambda {r = Rectangle.new(10,-3)}.should raise_error(InvalidRectangleError)
     end
     
-  end
+    it "of -1 length and -4 breadth should be invalid" do
+      lambda {r = Rectangle.new(-1,-4)}.should raise_error(InvalidRectangleError)
+    end
+    
+end
   
   
   
