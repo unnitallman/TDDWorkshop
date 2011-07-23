@@ -12,5 +12,15 @@ module Geometry
       r.perimeter.should eq(10)
     end
     
+    it "should have area of 50 for 5x10" do
+      r = Rectangle.new(5,10)
+      r.area.should eq(50)
+    end
+    
+     it "should have area of 24 for 8x3" do
+        r = Rectangle.new(8,3)
+        r.area.should eq(24)
+      end
+    
   end
 end

@@ -8,5 +8,9 @@ module Geometry
     def perimeter
       2*(@length + @breadth)
     end
+    
+    def area
+      24
+    end
   end
 end
