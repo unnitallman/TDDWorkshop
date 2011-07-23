@@ -34,6 +34,10 @@ module Geometry
       lambda {r = Rectangle.new(10,0)}.should raise_error(InvalidRectangleError)
     end
     
+    it "of 0 length and 0 breadth should be invalid" do
+      lambda {r = Rectangle.new(0,0)}.should raise_error(InvalidRectangleError)
+    end
+    
   end
   
   
