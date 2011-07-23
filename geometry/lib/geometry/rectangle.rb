@@ -20,7 +20,7 @@ module Geometry
       new(length, length)
     end
     
-    def equal?(r)
+    def ==(r)
       @length == r.length && @breadth == r.breadth
     end
     

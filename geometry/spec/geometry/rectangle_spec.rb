@@ -56,13 +56,13 @@ module Geometry
       it "be equal to a rectangle of 5x10" do
         r1 = Rectangle.new(5,10)
         r2 = Rectangle.new(5,10)
-        r1.should be_equal r2
+        r1.should eq r2
       end
       
       it "not be equal to a rectangle of 10x5" do
         r1 = Rectangle.new(5,10)
         r2 = Rectangle.new(10,5)
-        r1.should_not be_equal r2
+        r1.should_not eq r2
       end
     end
     
