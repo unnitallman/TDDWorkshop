@@ -51,21 +51,38 @@ module Geometry
         lambda {r = Rectangle.new(-1,-4)}.should raise_error(InvalidRectangleError)
       end
     end
-    
+
     context "of 5x10 should" do
       it "be equal to a rectangle of 5x10" do
         r1 = Rectangle.new(5,10)
         r2 = Rectangle.new(5,10)
         r1.should eq r2
       end
-      
+
       it "not be equal to a rectangle of 10x5" do
         r1 = Rectangle.new(5,10)
         r2 = Rectangle.new(10,5)
         r1.should_not eq r2
       end
-    end
     
+      it "be equal to a rectangle of 5x10(eql)" do
+        r1 = Rectangle.new(5,10)
+        r2 = Rectangle.new(5,10)
+        r1.should eq r2
+      end
+
+      it "not be equal to a rectangle of 10x5(eql)" do
+        r1 = Rectangle.new(5,10)
+        r2 = Rectangle.new(10,5)
+        r1.should_not eq r2
+      end
+      
+      it 'should not be equal to 2' do
+        r = Rectangle.new(5,10)
+        r.should_not eq 2
+      end   
+    end
+
   end
 
 

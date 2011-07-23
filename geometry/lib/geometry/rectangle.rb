@@ -21,7 +21,11 @@ module Geometry
     end
     
     def ==(r)
-      @length == r.length && @breadth == r.breadth
+      r.is_a?(Rectangle) && @length == r.length && @breadth == r.breadth
+    end
+    
+    def eql?(r)
+      self == r
     end
     
   end
