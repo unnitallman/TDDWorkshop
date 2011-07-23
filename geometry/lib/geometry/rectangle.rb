@@ -1,5 +1,6 @@
 module Geometry
   class Rectangle
+    attr_reader :length, :breadth
     def initialize(l,b)
        @length = l
        @breadth = b
@@ -17,6 +18,10 @@ module Geometry
     
     def self.build_square(length)
       new(length, length)
+    end
+    
+    def equal?(r)
+      @length == r.length && @breadth == r.breadth
     end
     
   end

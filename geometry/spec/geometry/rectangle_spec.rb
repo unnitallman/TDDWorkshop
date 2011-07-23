@@ -51,6 +51,15 @@ module Geometry
         lambda {r = Rectangle.new(-1,-4)}.should raise_error(InvalidRectangleError)
       end
     end
+    
+    context "of 5x10 should" do
+      it "be equal to a rectangle of 5x10" do
+        r1 = Rectangle.new(5,10)
+        r2 = Rectangle.new(5,10)
+        r1.should be_equal r2
+      end
+    end
+    
   end
 
 
