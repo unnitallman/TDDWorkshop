@@ -25,49 +25,50 @@ module Geometry
         r.area.should eq(24)
       end
     end
-    
-    it "of 0 length should be invalid" do
-      lambda {r = Rectangle.new(0,10)}.should raise_error(InvalidRectangleError)
+
+    context("should be invalid") do
+      it "if length 0" do
+        lambda {r = Rectangle.new(0,10)}.should raise_error(InvalidRectangleError)
+      end
+
+      it "if breadth 0" do
+        lambda {r = Rectangle.new(10,0)}.should raise_error(InvalidRectangleError)
+      end
+
+      it "if length and breadth 0" do
+        lambda {r = Rectangle.new(0,0)}.should raise_error(InvalidRectangleError)
+      end
+
+      it "if length -1" do
+        lambda {r = Rectangle.new(-1,10)}.should raise_error(InvalidRectangleError)
+      end
+
+      it "if breadth -3" do
+        lambda {r = Rectangle.new(10,-3)}.should raise_error(InvalidRectangleError)
+      end
+
+      it "if length -1 and breadth -4" do
+        lambda {r = Rectangle.new(-1,-4)}.should raise_error(InvalidRectangleError)
+      end
     end
-    
-    it "of 0 breadth should be invalid" do
-      lambda {r = Rectangle.new(10,0)}.should raise_error(InvalidRectangleError)
-    end
-    
-    it "of 0 length and 0 breadth should be invalid" do
-      lambda {r = Rectangle.new(0,0)}.should raise_error(InvalidRectangleError)
-    end
-    
-    it "of -1 length should be invalid" do
-      lambda {r = Rectangle.new(-1,10)}.should raise_error(InvalidRectangleError)
-    end
-    
-    it "of -3 breadth should be invalid" do
-      lambda {r = Rectangle.new(10,-3)}.should raise_error(InvalidRectangleError)
-    end
-    
-    it "of -1 length and -4 breadth should be invalid" do
-      lambda {r = Rectangle.new(-1,-4)}.should raise_error(InvalidRectangleError)
-    end
-    
-end
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
