@@ -31,5 +31,19 @@ module Geometry
         r.area.should eq(9)
       end
     end
+    
+    context("should be invalid") do
+      it "if side 0" do
+        lambda {r = Rectangle.build_square(0)}.should raise_error(InvalidRectangleError)
+      end
+
+
+      it "if side -1" do
+        lambda {r = Rectangle.build_square(-1)}.should raise_error(InvalidRectangleError)
+      end
+
+
+    end
+    
   end
 end
