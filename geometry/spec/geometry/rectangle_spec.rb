@@ -81,6 +81,17 @@ module Geometry
         r = Rectangle.new(5,10)
         r.should_not eq 2
       end   
+      
+      it 'should not be equal to nil' do
+        r = Rectangle.new(5,10)
+        r.should_not eq nil
+      end
+      
+      it "should have the same has code for the same rectangle object" do
+        r1 = Rectangle.new(5,10)
+        r2 = Rectangle.new(5,10)
+        r1.hash.should eq r2.hash
+      end
     end
 
   end

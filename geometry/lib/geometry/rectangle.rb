@@ -28,5 +28,9 @@ module Geometry
       self == r
     end
     
+    def hash
+      length.hash * 13 + breadth.hash * 7
+    end
+    
   end
 end
