@@ -12,5 +12,10 @@ module Geometry
     def area
       @length * @breadth
     end
+    
+    def self.build_square(length)
+      new(length, length)
+    end
+    
   end
 end
