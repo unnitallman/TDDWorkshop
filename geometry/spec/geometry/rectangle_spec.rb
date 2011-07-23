@@ -25,5 +25,9 @@ module Geometry
         r.area.should eq(24)
       end
     end
+    
+    it "of 0 length should be invalid" do
+      lambda {r = Rectangle.new(0,10)}.should raise_error(InvalidRectangleError)
+    end
   end
 end

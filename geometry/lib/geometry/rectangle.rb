@@ -3,6 +3,8 @@ module Geometry
     def initialize(l,b)
        @length = l
        @breadth = b
+       
+       raise InvalidRectangleError if (@length == 0 || @breadth == 0)
     end
   
     def perimeter
