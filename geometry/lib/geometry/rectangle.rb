@@ -10,7 +10,7 @@ module Geometry
     end
     
     def area
-      24
+      @length * @breadth
     end
   end
 end
