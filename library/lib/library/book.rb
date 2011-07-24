@@ -12,8 +12,8 @@ module Library
       self.isbn == b.isbn
     end
 
-    def eql?(r)
-      self == r
+    def eql?(b)
+      self == b
     end
   end
 end
