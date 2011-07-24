@@ -16,7 +16,16 @@ module Library
     it "customer should be able to borrow a book" do
       b1 = Book.new(:name => 'Book1', :author => 'author1', :price => '10', :isbn => 1)
       o = Outlet.new
-      o.issue(b1.isbn).should 
+      o.issue(b1).should be true
     end
+    
+    it "customer should not be able to borrow a already borrowed book" do
+      b1 = Book.new(:name => 'Book1', :author => 'author1', :price => '10', :isbn => 1)
+      o = Outlet.new
+      o.issue(b1)
+      
+      o.issue(b1).should_not be true
+    end
+    
   end
 end

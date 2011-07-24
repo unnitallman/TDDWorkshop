@@ -16,8 +16,16 @@ module Library
       @books[isbn]
     end
     
-    def issue(isbn)
-      true
+    def issue(book)
+      b = lookup(book.isbn) 
+      
+      if b.borrowed
+        return false
+      else
+        b.borrowed = true
+        return true
+      end
+           
     end
   end
 end
