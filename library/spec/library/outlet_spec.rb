@@ -27,5 +27,10 @@ module Library
       o.issue(b1).should_not be true
     end
     
+    it "customer should not be able to borrow a book that doesn't exist in the library" do
+      o = Outlet.new
+      o.issue(Book.new).should_not be true
+    end
+    
   end
 end

@@ -17,7 +17,8 @@ module Library
     end
     
     def issue(book)
-      b = lookup(book.isbn) 
+      b = lookup(book.isbn)
+      return false unless b 
       
       if b.borrowed
         return false
