@@ -16,6 +16,10 @@ module Library
       @books[isbn]
     end
     
+    def add_book(b)
+      @books[b.isbn] = b
+    end
+    
     def issue(book)
       b = lookup(book.isbn)
       return false unless b 

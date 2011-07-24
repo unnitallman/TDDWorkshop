@@ -32,5 +32,12 @@ module Library
       o.issue(Book.new).should_not be true
     end
     
+    it "owner should be able to add a book" do
+      o = Outlet.new
+      b1 = Book.new(:name => 'New Book', :author => 'author5', :price => '10', :isbn => 4)
+      o.add_book(b1)
+      o.lookup(b1.isbn).should eq b1
+    end
+    
   end
 end
