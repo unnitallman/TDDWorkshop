@@ -18,5 +18,11 @@ module Library
     def eql?(b)
       self == b
     end
+    
+    def self.find_by_isbn(isbn)
+      json = open("http://openlibrary.org/api/books?bibkeys=ISBN:#{isbn}&format=json").read
+      book_details = JSON.parse(json)["ISBN:#{isbn}"]
+      Book.new(:isbn => book_details["bib_key"].split(':').last)
+    end
   end
 end

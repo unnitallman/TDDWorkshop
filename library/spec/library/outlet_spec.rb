@@ -39,5 +39,10 @@ module Library
       o.lookup(b1.isbn).should eq b1
     end
     
+    it "should be able to fetch details of a book from openlibrary, given its ISBN" do
+      book = Book.new(:name => 'Book1', :author => 'author1', :price => '10', :isbn => "0451526538")
+      Book.find_by_isbn("0451526538").should eq book
+    end  
+    
   end
 end
