@@ -41,6 +41,7 @@ module Library
     
     it "should be able to fetch details of a book from openlibrary, given its ISBN" do
       book = Book.new(:name => 'Book1', :author => 'author1', :price => '10', :isbn => "0451526538")
+      Book.should_receive(:get_data_from_openlib).with("0451526538").and_return("{\"ISBN:0451526538\":{\"bib_key\":\"ISBN:0451526538\"}}")
       Book.find_by_isbn("0451526538").should eq book
     end  
     
