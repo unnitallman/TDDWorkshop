@@ -16,8 +16,8 @@ module Library
       @books[isbn]
     end
     
-    def borrow(isbn)
-      lookup(isbn)
+    def issue(isbn)
+      true
     end
   end
 end

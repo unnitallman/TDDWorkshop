@@ -13,18 +13,10 @@ module Library
       o.lookup(b1.isbn).should eq b1
     end
     
-    it "customer should be able to borrow a book given a valid ISBN and it has not been borrowed already " do
+    it "customer should be able to borrow a book" do
       b1 = Book.new(:name => 'Book1', :author => 'author1', :price => '10', :isbn => 1)
       o = Outlet.new
-      o.borrow(b1.isbn).should eq b1
+      o.issue(b1.isbn).should 
     end
-    
-    it "customer should not be able to borrow a book given an invalid ISBN and it has not been borrowed already" do
-      o = Outlet.new
-      o.borrow(-1).should eq nil
-    end
-    
-    
-    
   end
 end
